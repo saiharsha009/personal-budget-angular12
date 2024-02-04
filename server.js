@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const data = require("./budget.json");
 
 app.use('/', express.static('public'));
 
@@ -25,7 +26,7 @@ app.get('/hello',(req,res)=>{
 });
 
 app.get('/budget',(req,res)=>{
-    res.json(budget);
+    res.send(data);
 });
 
 
